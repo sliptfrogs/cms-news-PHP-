@@ -1,0 +1,45 @@
+    tbl_user = {
+        id
+        username
+        email
+        password
+        profile
+        date
+    }
+    logoes = {
+        id
+        thumbnail
+        status ( footer , header )
+    }
+    tbl_news = {
+        id
+        author_id
+        title
+        date
+        description
+        news_type
+        category
+        thumbnail
+        banner
+        views
+    }
+    tbl_about_us = {
+        id
+        description
+    }
+    tbl_follow_us = {
+        id
+        label
+        thumbnail
+        url
+        status ( footer )
+    }
+    tbl_feedback = {
+        id
+        name
+        email
+        phone
+        address
+        description
+        created_at
+    }
