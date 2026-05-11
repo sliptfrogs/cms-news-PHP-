@@ -1,7 +1,7 @@
 <!-- @import jquery & sweet alert  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<?php 
+<?php
 include('conn.php');
 function limit_text_artical($text, $limit) {
     if (strlen($text) > $limit) {
@@ -19,7 +19,7 @@ function getTrading(){
         <a href="news-detail.php?id='.$row['id'].'&type='.$row['news_type'].'" style="font-style:italic;">'.$row['title'].'</a> &ensp;
         ';
     }
-    
+
 }
 function getRelated($type){
     global $cn;
@@ -60,16 +60,16 @@ function getHomeNews(){
             </div>
         </a>
     </figure>
-    
+
     ';
 }
 function getHomeNews2(){
     global $cn;
-    $sql = "SELECT * 
+    $sql = "SELECT *
             FROM (
-                SELECT * 
-                FROM `news` 
-                ORDER BY `view` DESC 
+                SELECT *
+                FROM `news`
+                ORDER BY `view` DESC
                 LIMIT 2 OFFSET 1
             ) AS last_two
             ORDER BY `view` DESC";
@@ -89,7 +89,7 @@ function getHomeNews2(){
                 </a>
             </figure>
         </div>
-        
+
         ';
     }
 }
@@ -140,8 +140,8 @@ function sportNews(){
 }
 function socialNews(){
     global $cn;
-    $sql = "SELECT * 
-            FROM `news` WHERE `news_type`='Social' 
+    $sql = "SELECT *
+            FROM `news` WHERE `news_type`='Social'
             LIMIT 6";
     $res = $cn->query($sql);
     while($row=$res->fetch_assoc()){
@@ -165,8 +165,8 @@ function socialNews(){
 }
 function entertainmentNews(){
     global $cn;
-    $sql = "SELECT * 
-            FROM `news` WHERE `news_type`='Entertainment' 
+    $sql = "SELECT *
+            FROM `news` WHERE `news_type`='Entertainment'
             LIMIT 6";
     $res = $cn->query($sql);
     while($row=$res->fetch_assoc()){
@@ -197,4 +197,30 @@ function getStatus($status){
         <img style="width:100%;height:100%" src="../admin/assets/icon/'.$row['image'].'" alt="">
     ';
 
+}
+
+// fuunction get sport national
+function sportNewsFeature($type){
+    global $cn;
+    $sql = "SELECT * FROM `news` WHERE `categories`='$type' LIMIT 6";
+    $res = $cn->query($sql);
+    if($res){
+        while($row=$res->fetch_assoc()){
+            echo '
+            <div class="col-4">
+                    <figure>
+                        <a href="news-detail.php?id='.$row['id'].'&type='.$row['news_type'].'">
+                            <div class="thumbnail">
+                                <img width="350" height="200" src="../admin/assets/thumb/'.$row['thumbnail'].'" alt="">
+                            <div class="title">
+                                '.$row['title'].'
+                            </div>
+                            </div>
+                        </a>
+                    </figure>
+                </div>
+            ';
+
+        }
+    }
 }

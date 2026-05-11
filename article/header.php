@@ -48,27 +48,27 @@
                             <a href="sport-news-national.php">National</a>
                         </li>
                         <li class="my-1">
-                            <a href="">International</a>
+                            <a href="sport-news-international.php">International</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-sport"><a href="javascript:viod(0)">SOCIAL</a>
                     <ul class="sub-menu sport rounded-bottom bg-light">
                         <li class="my-1">
-                            <a href="">National</a>
+                            <a href="social-news-national.php">National</a>
                         </li>
                         <li class="my-1">
-                            <a href="">International</a>
+                            <a href="social-news-international.php">International</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-sport"><a href="javascript:viod(0)">ENTERTAINMENT</a>
                     <ul class="sub-menu sport rounded-bottom bg-light">
                         <li class="my-1">
-                            <a href="">National</a>
+                            <a href="entertainment-news-national.php">National</a>
                         </li>
                         <li class="my-1">
-                            <a href="">International</a>
+                            <a href="entertainment-news-international.php">International</a>
                         </li>
                     </ul>
                 </li>
@@ -85,6 +85,6 @@
                     <input type="text" class="box" placeholder="Search Here" name="query" value="<?= $query ?>">
                     <button><i class="fas fa-search"></i></button>
                 </form>
-            </div>    
+            </div>
         </div>
     </header>
